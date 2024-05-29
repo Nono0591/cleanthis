@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+
+
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+		{% block header %}
+			{{ include("/navbar/index.html.twig") }}
+		{% endblock %}
+		{% block body %}
+			{% include "home/home.html.twig" %}
+		{% endblock %}
+
+		{% include "base/footer.html.twig" %}
+	</body>
+
+
+</html>
